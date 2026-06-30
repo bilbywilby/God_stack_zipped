@@ -1,0 +1,42 @@
+[
+    {
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+        "viewport": "1366x768",
+        "accept_language": "en-GB,en;q=0.8",
+        "sec_ch_ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"119\", \"Google Chrome\";v=\"119\"",
+        "sec_ch_ua_platform": "\"Linux\"",
+        "do_not_track": "0"
+    },
+    {
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+        "viewport": "1920x1080",
+        "accept_language": "en-CA,en;q=0.9",
+        "sec_ch_ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"121\", \"Google Chrome\";v=\"121\"",
+        "sec_ch_ua_platform": "\"Windows\"",
+        "do_not_track": "1"
+    },
+    {
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+        "viewport": "1440x900",
+        "accept_language": "en-GB,en;q=0.8",
+        "sec_ch_ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"119\", \"Google Chrome\";v=\"119\"",
+        "sec_ch_ua_platform": "\"Linux\"",
+        "do_not_track": "1"
+    },
+    {
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "viewport": "1920x1080",
+        "accept_language": "en-GB,en;q=0.8",
+        "sec_ch_ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\"",
+        "sec_ch_ua_platform": "\"Linux\"",
+        "do_not_track": "0"
+    },
+    {
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "viewport": "1366x768",
+        "accept_language": "en-CA,en;q=0.9",
+        "sec_ch_ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"118\", \"Google Chrome\";v=\"118\"",
+        "sec_ch_ua_platform": "\"Linux\"",
+        "do_not_track": "0"
+    }
+]

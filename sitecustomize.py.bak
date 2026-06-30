@@ -1,0 +1,39 @@
+import sys
+import types
+
+# --- Stub prometheus_client ---
+if "prometheus_client" not in sys.modules:
+    prom = types.ModuleType("prometheus_client")
+    class _NoOpMetric:
+        def __init__(self, *args, **kwargs): pass
+        def inc(self, *args, **kwargs): pass
+        def dec(self, *args, **kwargs): pass
+        def set(self, *args, **kwargs): pass
+        def observe(self, *args, **kwargs): pass
+    prom.Counter = _NoOpMetric
+    prom.Gauge   = _NoOpMetric
+    prom.Summary = _NoOpMetric
+    prom.start_http_server = lambda *args, **kwargs: None
+    sys.modules["prometheus_client"] = prom
+
+# --- Stub websockets and nested packages ---
+if "websockets" not in sys.modules:
+    ws = types.ModuleType("websockets")
+    ws.__path__ = [] 
+    
+    class _MockWSProtocol:
+        async def recv(self): return "{}"
+        async def send(self, data): pass
+        async def close(self): pass
+        
+    async def _mock_connect(*args, **kwargs):
+        return _MockWSProtocol()
+        
+    ws.connect = _mock_connect
+    sys.modules["websockets"] = ws
+
+if "websockets.exceptions" not in sys.modules:
+    ws_ex = types.ModuleType("websockets.exceptions")
+    class ConnectionClosed(Exception): pass
+    ws_ex.ConnectionClosed = ConnectionClosed
+    sys.modules["websockets.exceptions"] = ws_ex

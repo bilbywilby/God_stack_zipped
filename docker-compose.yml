@@ -1,0 +1,52 @@
+networks:
+  god_network:
+    driver: bridge
+    name: god_network
+services:
+  god_grafana:
+    container_name: god_grafana
+    depends_on:
+    - god_prometheus
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_DEFAULT_THEME: light
+    image: grafana/grafana:10.4.0
+    networks:
+    - god_network
+    ports:
+    - 3000:3000
+    restart: unless-stopped
+    volumes:
+    - /home/tangleroot013/god_stack/grafana/provisioning:/etc/grafana/provisioning:ro
+  god_host_exporter:
+    image: prom/node-exporter:latest
+    container_name: god_host_exporter
+    command:
+      - '--web.listen-address=0.0.0.0:9100'
+    networks:
+      - god_network
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+
+  god_prometheus:
+    container_name: god_prometheus
+    extra_hosts:
+    - host.docker.internal:host-gateway
+    image: prom/prometheus:v2.53.0
+    networks:
+    - god_network
+    ports:
+    - 9090:9090
+    restart: unless-stopped
+    volumes:
+    - /home/tangleroot013/god_stack/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  god_pushgateway_service:
+    container_name: god_pushgateway
+    image: prom/pushgateway:v1.10.0
+    networks:
+    - god_network
+    ports:
+    - 9091:9091
+    restart: unless-stopped
+version: '3.8'
